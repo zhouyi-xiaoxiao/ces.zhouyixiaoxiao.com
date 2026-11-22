@@ -4,179 +4,204 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#10192e">
+<meta name="theme-color" content="#0f1b33">
 <title>CES 2027 行程方案</title>
 <style>
 :root{
-  --night:#10192e; --night2:#1b2847; --paper:#f4efe6; --card:#fffcf6; --ink:#1c1a17; --mute:#7a7266; --line:#e4dccd;
-  --gold:#c9973f; --gold-soft:#f3e6cb; --red:#c2452d; --red-soft:#f8e2db; --green:#2e7557; --green-soft:#dcefe4;
-  --her:#c75d7a; --him:#3f78b5; --violet:#7b5cc4;
-  --work:#ddd6c9; --wk:#c3cfb8; --comp:#e0a030; --hol:#4f8fd0; --wed:#c75d7a;
+  --night:#0f1b33; --night2:#1d2f57; --paper:#f6f1e8; --card:#fffdf8; --soft:#efe8da; --ink:#1d1b18; --mute:#766e62; --line:#e3dac9;
+  --gold:#c08a2e; --gold-soft:#f5e8cc; --coral:#d2553a; --coral-soft:#fae4dc; --green:#2c7a5a; --green-soft:#dff1e7;
+  --her:#c95f7f; --him:#3d79b8; --violet:#7a5bc6;
+  --work:#ddd5c6; --wk:#c5d1b9; --comp:#e0a030; --hol:#4f8fd0; --wed:#c95f7f;
   --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  --shadow:0 1px 2px rgba(30,20,5,.05),0 8px 28px rgba(30,20,5,.07);
+  --shadow:0 1px 2px rgba(40,25,5,.05),0 10px 30px rgba(40,25,5,.07);
 }
 @media (prefers-color-scheme: dark){
-  :root{--paper:#0f1422;--card:#182036;--ink:#f0eadf;--mute:#9a9486;--line:#2b3550;--gold-soft:#3a2f16;--red-soft:#3d1f18;--green-soft:#173326;--work:#3a4258;--wk:#465a45;--shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35)}
+  :root{--paper:#0e1321;--card:#171f34;--soft:#1f2942;--ink:#f1ebdf;--mute:#9d978a;--line:#2c3652;--gold:#d9a548;--gold-soft:#3b3017;--coral-soft:#40211a;--green-soft:#17352a;--work:#3a4258;--wk:#465a45;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35)}
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-text-size-adjust:100%;padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 .wrap{max-width:780px;margin:0 auto;padding:0 16px}
 a{color:inherit}
-/* hero */
-.hero{background:radial-gradient(120% 90% at 85% 0%,#2b3d6b 0%,var(--night2) 38%,var(--night) 100%);color:#f6efe0;padding:36px 0 64px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:auto 0 -1px 0;height:36px;background:var(--paper);border-radius:28px 28px 0 0}
-.kicker{font-size:12px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;font-weight:600}
-h1{font:700 34px/1.2 var(--serif);margin:10px 0 14px;letter-spacing:.02em}
-.hero p{color:#cfc7b6;margin:0;max-width:34em}
+button{font:inherit;color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.hero{background:radial-gradient(120% 90% at 88% 0%,#31467c 0%,var(--night2) 40%,var(--night) 100%);color:#f6efe0;padding:34px 0 60px;position:relative}
+.hero:after{content:"";position:absolute;inset:auto 0 -1px 0;height:32px;background:var(--paper);border-radius:28px 28px 0 0}
+.kicker{font-size:12px;letter-spacing:.22em;color:#e0b55c;font-weight:600}
+h1{font:700 32px/1.2 var(--serif);margin:10px 0 12px;letter-spacing:.02em}
+.hero p{color:#cfc8b8;margin:0;max-width:34em}
 .hero p b{color:#fff}
-.route{margin:26px 0 4px;width:100%;height:auto;display:block}
-.route text{font:600 11px var(--sans);fill:#e9dfc8}
-.route .sm{font-weight:400;fill:#9fa8c2;font-size:10px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
-.fact{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px}
-.fact b{display:block;font:700 20px/1.2 var(--serif);color:#fff}
-.fact span{font-size:12px;color:#aeb5c9}
-/* sections */
-h2{font:700 22px/1.3 var(--serif);margin:44px 0 6px}
-.hint{color:var(--mute);font-size:14px;margin:0 0 14px}
-/* plan chooser */
+.route{margin:22px 0 0;width:100%;height:auto;display:block}
+.route text{font:600 11px var(--sans);fill:#eadfc8}
+.route .sm{font-weight:400;fill:#a3acc6;font-size:10px}
+.step{display:flex;align-items:center;gap:10px;margin:40px 0 4px}
+.step i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font:700 14px/28px var(--sans);text-align:center;font-style:normal}
+h2{font:700 21px/1.3 var(--serif);margin:0}
+.hint{color:var(--mute);font-size:14px;margin:2px 0 14px}
 .plans{display:grid;gap:10px}
-.plan{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;text-align:left;width:100%;font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;cursor:pointer;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
+.plan{display:grid;grid-template-columns:26px 1fr auto;gap:2px 10px;align-items:center;text-align:left;width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px 14px 12px;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s,border-color .12s}
 .plan:active{transform:scale(.99)}
-.plan.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),var(--shadow)}
+.plan .rd{grid-row:1/3;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);position:relative}
+.plan.on{border-color:var(--gold);background:linear-gradient(0deg,var(--gold-soft),var(--card) 70%)}
+.plan.on .rd{border-color:var(--gold);background:var(--gold)}
+.plan.on .rd:after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .plan .nm{font:700 18px/1.3 var(--serif)}
-.plan .ds{grid-column:1;font-size:13px;color:var(--mute)}
-.plan .pr{grid-row:1/3;grid-column:2;text-align:right;font:700 22px/1.1 var(--serif);font-variant-numeric:tabular-nums}
-.plan .pr small{display:block;font:500 12px var(--sans);color:var(--mute);margin-top:3px}
-.plan .meter{grid-column:1/3;height:5px;border-radius:9px;background:var(--line);margin-top:8px;overflow:hidden}
-.plan .meter i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--red))}
+.plan .ds{grid-column:2;font-size:13px;color:var(--mute)}
+.plan .pr{grid-row:1/3;grid-column:3;text-align:right;font:700 21px/1.1 var(--serif)}
+.plan .pr small{display:block;font:500 11px var(--sans);color:var(--mute);margin-top:4px}
 .badge{display:inline-block;font:600 11px var(--sans);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:2px;white-space:nowrap}
-.badge.rec{background:var(--green);color:#fff}.badge.extra{background:var(--violet);color:#fff}.badge.low{background:var(--gold-soft);color:#8a6410}
-@media (prefers-color-scheme: dark){.badge.low{color:var(--gold)}}
-/* detail */
-.detail{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);margin-top:18px;overflow:hidden}
-.dhead{padding:20px 18px 16px;background:linear-gradient(135deg,var(--night2),var(--night));color:#f6efe0}
-.dhead h3{font:700 24px/1.25 var(--serif);margin:0 0 4px}
-.dhead p{margin:0;color:#c8c0af;font-size:14px}
+.badge.rec{background:var(--green);color:#fff}.badge.extra{background:var(--violet);color:#fff}.badge.low{background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tier{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center;cursor:pointer;box-shadow:var(--shadow)}
+.tier b{display:block;font:700 17px var(--serif)}
+.tier span{display:block;font-size:12px;color:var(--mute);line-height:1.4;margin-top:2px}
+.tier em{display:block;font:700 15px var(--serif);font-style:normal;margin-top:6px}
+.tier.on{border-color:var(--gold);background:linear-gradient(0deg,var(--gold-soft),var(--card) 70%)}
+.detail{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.dhead{padding:18px 18px 16px;background:linear-gradient(135deg,var(--night2),var(--night));color:#f6efe0}
+.dhead h3{font:700 22px/1.25 var(--serif);margin:0 0 4px}
+.dhead p{margin:0;color:#c9c1b0;font-size:14px}
 .split{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-.split div{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 10px;font-size:12px;color:#aeb5c9}
-.split b{display:block;font:700 18px var(--serif);color:#fff;font-variant-numeric:tabular-nums}
+.split div{background:rgba(255,255,255,.09);border-radius:10px;padding:8px 10px;font-size:12px;color:#b3bacd}
+.split b{display:block;font:700 18px var(--serif);color:#fff}
+.split .tot{background:#e0b55c;color:#3a2a08}.split .tot b{color:#1d1503}
 .dbody{padding:16px 18px 20px}
-.sec{font:600 12px var(--sans);letter-spacing:.14em;color:var(--mute);margin:20px 0 8px;text-transform:uppercase}
+.sec{display:flex;justify-content:space-between;align-items:baseline;font:700 15px var(--sans);margin:24px 0 8px}
 .sec:first-child{margin-top:2px}
-/* calendar */
-.calw{overflow-x:auto;margin:0 -18px;padding:0 18px 4px}
-.cal{display:grid;grid-template-columns:repeat(20,minmax(31px,1fr));gap:3px;min-width:660px}
+.sec small{font:500 13px var(--sans);color:var(--mute)}
+.calw{overflow-x:auto;margin:0 -18px;padding:0 18px 4px;-webkit-overflow-scrolling:touch}
+.cal,.ev{display:grid;grid-template-columns:repeat(20,minmax(31px,1fr));gap:3px;min-width:660px}
 .d{border-radius:7px;padding:4px 0 5px;text-align:center;font-size:10px;line-height:1.3;background:var(--work)}
 .d b{display:block;font-size:13px}
 .d.wk{background:var(--wk)}.d.comp{background:var(--comp);color:#fff}.d.hol{background:var(--hol);color:#fff}.d.wed{background:var(--wed);color:#fff}.d.extra{background:var(--violet);color:#fff}
 .d.dim{opacity:.45}
-.ev{display:grid;grid-template-columns:repeat(20,minmax(31px,1fr));gap:3px;min-width:660px;margin-top:4px}
+.ev{margin-top:4px}
 .ev span{font-size:11px;text-align:center;white-space:nowrap;color:var(--mute);border-top:2px solid var(--gold);padding-top:3px}
 .legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--mute);margin-top:8px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px}
-/* tickets */
-.tk{display:grid;grid-template-columns:64px 1fr;background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:10px 0;position:relative}
+.swipe{font-size:12px;color:var(--mute);margin-top:2px}
+.tk{display:grid;grid-template-columns:62px 1fr;background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:10px 0;position:relative}
 .tk .stub{border-right:2px dashed var(--line);padding:12px 6px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:4px}
-.tk .stub:before,.tk .stub:after{content:"";position:absolute;left:55px;width:18px;height:18px;border-radius:50%;background:var(--card);border:1px solid var(--line)}
+.tk .stub:before,.tk .stub:after{content:"";position:absolute;left:53px;width:18px;height:18px;border-radius:50%;background:var(--card);border:1px solid var(--line)}
 .tk .stub:before{top:-10px}.tk .stub:after{bottom:-10px}
 .tk .mo{font-size:11px;color:var(--mute)}
-.tk .dy{font:700 26px/1 var(--serif)}
+.tk .dy{font:700 25px/1 var(--serif)}
 .who{font:700 11px var(--sans);border-radius:99px;padding:2px 0;color:#fff;margin:2px 6px 0}
 .who.her{background:var(--her)}.who.him{background:var(--him)}.who.both{background:var(--ink);color:var(--paper)}
 .tk .main{padding:12px 14px;min-width:0}
 .leg{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
-.leg .pt b{display:block;font:700 22px/1.1 var(--serif);letter-spacing:.03em}
+.leg .pt b{display:block;font:700 21px/1.1 var(--serif);letter-spacing:.03em}
 .leg .pt span{font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
 .leg .pt.r{text-align:right}
-.leg .mid{text-align:center;font-size:11px;color:var(--mute);position:relative}
-.leg .mid:before{content:"";display:block;border-top:1.5px dashed var(--gold);margin-bottom:4px;position:relative;top:6px}
-.leg .mid em{font-style:normal;background:var(--paper);position:relative;padding:0 6px;color:var(--gold);font-size:14px}
+.leg .mid{text-align:center;font-size:11px;color:var(--mute)}
+.leg .mid:before{content:"";display:block;border-top:1.5px dashed var(--gold);margin-bottom:6px}
 .meta{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-top:8px;font-size:13px}
-.meta .fn{color:var(--mute)}
-.meta .fn b{color:var(--ink);font-weight:600}
-.meta .p{font:700 18px var(--serif);white-space:nowrap;font-variant-numeric:tabular-nums}
-.note{font-size:12px;color:var(--red);margin-top:4px}
+.meta .fn{color:var(--mute)}.meta .fn b{color:var(--ink);font-weight:600}
+.meta .p{font:700 18px var(--serif);white-space:nowrap}
+.note{font-size:12px;color:var(--coral);margin-top:4px}
 .btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.btn{flex:1 1 130px;text-align:center;text-decoration:none;font:600 14px var(--sans);padding:9px 10px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.btn{flex:1 1 120px;text-align:center;text-decoration:none;font:600 14px var(--sans);padding:10px;border-radius:10px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
 .btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.stay{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:14px;border-left:5px solid var(--gold)}
+.stay .city{font:600 12px var(--sans);letter-spacing:.1em;color:var(--gold)}
+.stay h4{font:700 18px/1.3 var(--serif);margin:2px 0 2px}
+.stay .why{font-size:13px;color:var(--mute);margin:0}
+.stay .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:10px}
+.stay .row span{font-size:13px;color:var(--mute)}
+.stay .row b{font:700 19px var(--serif);white-space:nowrap}
+.chan{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chan span{font-size:12px;background:var(--soft);border-radius:99px;padding:2px 9px;color:var(--mute)}
+.chan span.best{background:var(--green-soft);color:var(--green);font-weight:600}
+.stay.none{border-left-color:var(--line);color:var(--mute);font-size:14px}
 .pc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .pc div{border-radius:12px;padding:10px 12px;font-size:14px}
-.pc .pro{background:var(--green-soft)}.pc .con{background:var(--red-soft)}
+.pc .pro{background:var(--green-soft)}.pc .con{background:var(--coral-soft)}
 .pc h4{margin:0 0 4px;font:700 13px var(--sans)}
 .pc ul{margin:0;padding-left:18px}.pc li{margin:3px 0}
-@media (max-width:520px){.pc{grid-template-columns:1fr}h1{font-size:28px}}
-/* chart */
 .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
-.chart{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:end;height:170px;margin-top:6px}
-.col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:11px;color:var(--mute)}
-.col i{display:block;width:100%;border-radius:6px 6px 0 0;background:var(--gold)}
+table{width:100%;border-collapse:separate;border-spacing:4px;font-size:14px}
+th{font:600 12px var(--sans);color:var(--mute);text-align:center;padding:2px}
+td.l{text-align:left;font:700 14px var(--serif);color:var(--ink);white-space:nowrap}
+td.c{text-align:center;background:var(--soft);border-radius:9px;padding:9px 2px;cursor:pointer;font-variant-numeric:tabular-nums;font-weight:600}
+td.c.min{background:var(--green-soft);color:var(--green)}
+td.c.on{background:var(--ink);color:var(--paper)}
+.chart{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:end;margin-top:6px}
+.col{text-align:center;font-size:11px;color:var(--mute)}
+.col i{display:block;border-radius:6px 6px 0 0;background:var(--gold);margin-top:3px}
 .col.no i{background:repeating-linear-gradient(45deg,var(--line),var(--line) 4px,transparent 4px,transparent 8px);border:1px solid var(--line)}
-.col.hot i{background:var(--red)}
-.col b{color:var(--ink);font-variant-numeric:tabular-nums;font-size:11px;margin-bottom:3px}
-.col span{margin-top:4px}
+.col.hot i{background:var(--coral)}
+.col b{color:var(--ink);font-variant-numeric:tabular-nums;display:block}
 .todo{list-style:none;padding:0;margin:0}
 .todo li{padding:10px 0 10px 30px;border-top:1px solid var(--line);position:relative;font-size:15px}
 .todo li:first-child{border-top:0}
 .todo li:before{content:"";position:absolute;left:2px;top:14px;width:16px;height:16px;border-radius:5px;border:2px solid var(--gold)}
-.reply{margin-top:12px;border-radius:12px;background:var(--green-soft);padding:12px;display:none}
-.reply p{margin:0 0 8px;font-weight:600}
-.reply button{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:0;background:var(--green);color:#fff;cursor:pointer}
-footer{color:var(--mute);font-size:12px;padding:36px 0 56px;text-align:center}
+footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--night);color:#f6efe0;padding:10px 0 calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(0,0,0,.25);z-index:9}
+.bar .in{display:flex;align-items:center;gap:12px}
+.bar .t{flex:1;min-width:0}
+.bar .t small{display:block;font-size:12px;color:#aab2c8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .t b{font:700 20px/1.2 var(--serif)}
+.bar .t b span{font:500 13px var(--sans);color:#cfc8b8;margin-left:6px}
+.bar button{flex:none;border:0;border-radius:12px;background:#e0b55c;color:#221803;font-weight:700;font-size:15px;padding:12px 16px;cursor:pointer}
+@media (max-width:520px){.pc{grid-template-columns:1fr}h1{font-size:27px}.tier span{font-size:11px}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
-  <div class="kicker">Honeymoon · CES 2027</div>
+  <div class="kicker">HONEYMOON · CES 2027</div>
   <h1>去拉斯维加斯的五条路</h1>
-  <p>不多请假，建议选<b>「折中」</b>：两人机票约 <b>£2,939</b>，连休 14 天，提前一晚到香港，12 月 31 日上午办身份证。能多请 3 天假，就选「早走」：更便宜，直飞，19 天。</p>
+  <p>机票和住宿都算进去了。不多请假的话建议选<b>「折中」</b>：提前一晚到香港，12 月 31 日上午办身份证，连休 14 天。下面三步选完，底部会一直显示合计。</p>
   <svg class="route" viewBox="0 0 720 150" role="img" aria-label="上海和伦敦出发，香港会合，经洛杉矶到拉斯维加斯，再各自回家">
-    <path d="M60 40 Q190 20 250 92" fill="none" stroke="#c75d7a" stroke-width="2" stroke-dasharray="5 5"/>
-    <path d="M60 128 Q170 135 250 92" fill="none" stroke="#6fa3dc" stroke-width="2" stroke-dasharray="5 5"/>
-    <path d="M250 92 Q400 -10 550 72" fill="none" stroke="#c9973f" stroke-width="2.5"/>
-    <path d="M550 72 L660 52" fill="none" stroke="#c9973f" stroke-width="2.5"/>
+    <path d="M60 40 Q190 20 250 92" fill="none" stroke="#e58aa6" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M60 128 Q170 135 250 92" fill="none" stroke="#7fb0e6" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M250 92 Q400 -10 550 72" fill="none" stroke="#e0b55c" stroke-width="2.5"/>
+    <path d="M550 72 L660 52" fill="none" stroke="#e0b55c" stroke-width="2.5"/>
     <g fill="#f6efe0"><circle cx="60" cy="40" r="5"/><circle cx="60" cy="128" r="5"/><circle cx="550" cy="72" r="5"/></g>
-    <circle cx="250" cy="92" r="8" fill="#c9973f"/><circle cx="660" cy="52" r="8" fill="#c2452d"/>
-    <text x="72" y="36">上海</text><text x="72" y="50" class="sm">她 · 12-30</text>
-    <text x="72" y="124">伦敦</text><text x="72" y="138" class="sm">他 · 12-30</text>
+    <circle cx="250" cy="92" r="8" fill="#e0b55c"/><circle cx="660" cy="52" r="8" fill="#e2664a"/>
+    <text x="72" y="36">上海</text><text x="72" y="50" class="sm">她</text>
+    <text x="72" y="124">伦敦</text><text x="72" y="138" class="sm">他</text>
     <text x="232" y="116">香港</text><text x="220" y="130" class="sm">会合 · 办证</text>
     <text x="528" y="96">洛杉矶</text><text x="622" y="34">拉斯维加斯</text><text x="634" y="76" class="sm">CES 1-6~9</text>
   </svg>
-  <div class="facts">
-    <div class="fact"><b>14 天</b><span>不多请假的连休</span></div>
-    <div class="fact"><b>¥24–38k</b><span>两人全部机票</span></div>
-    <div class="fact"><b>1-14</b><span>回去上班</span></div>
-  </div>
 </div></header>
 
 <main class="wrap">
-  <h2>点一个方案看详情</h2>
-  <p class="hint">价格是两人全部机票合计，不含酒店。每张票下面都有订票按钮。</p>
+  <div class="step" id="s1"><i>1</i><h2>选怎么走</h2></div>
+  <p class="hint">右边是两人机票加住宿的合计，会跟着第 2 步的住宿档变。</p>
   <div class="plans" id="plans"></div>
+
+  <div class="step" id="s2"><i>2</i><h2>选住哪一档</h2></div>
+  <p class="hint">三个城市各挑了一家，都是一间房两个人住。</p>
+  <div class="tiers" id="tiers"></div>
+
+  <div class="step" id="s3"><i>3</i><h2>看明细，直接订</h2></div>
+  <p class="hint">每张机票、每家酒店下面都有订购按钮。</p>
   <div class="detail" id="detail"></div>
 
-  <h2>为什么越晚走越贵</h2>
+  <div class="step"><i>≡</i><h2>全部组合一眼看完</h2></div>
+  <p class="hint">两人机票加住宿合计，单位英镑。点一格就切换过去。绿色是最便宜的。</p>
+  <div class="box"><table id="matrix"></table></div>
+
+  <div class="step"><i>?</i><h2>为什么越晚走机票越贵</h2></div>
   <p class="hint">香港飞洛杉矶，单人单程最低价。12 月 26、27 日最便宜，但香港入境处 25–27 日不办公，办不了身份证。</p>
   <div class="box"><div class="chart" id="chart"></div></div>
 
-  <h2>下单前先做这几件事</h2>
-  <div class="box"><ul class="todo">
+  <div class="step"><i>!</i><h2>下单前先做这几件事</h2></div>
+  <div class="box" style="margin-top:12px"><ul class="todo">
     <li><b>先约身份证。</b>12 月 28 日和 31 日之前查过有名额，但还没实际预约。约上了再买去香港的票。</li>
     <li><b>这趟领不到证。</b>登记后大约 5 个工作日才能领，要另去一次香港。</li>
-    <li><b>核对转机资格。</b>马尼拉过夜、温哥华转机、台北转机，用大陆护照是否可行还没逐项核实。回程不放心就选美航经达拉斯。</li>
-    <li><b>每段都是单独的票。</b>前一段晚点，后一段不负责；行李要自己取出来再托运。</li>
-    <li><b>看清行李。</b>美国境内 £46 的票不含任何行李。</li>
+    <li><b>核对转机资格。</b>马尼拉过夜、温哥华转机，用大陆护照是否可行还没逐项核实。回程不放心就选美航经达拉斯。</li>
+    <li><b>每段机票都是单独的票。</b>前一段晚点，后一段不负责；行李要自己取出来再托运。</li>
+    <li><b>酒店先订可免费取消的。</b>拉斯维加斯的酒店到店还要另收度假村费，页面上的每晚价格不一定含税费，以结算页为准。</li>
   </ul></div>
-
-  <h2>选好了告诉他</h2>
-  <div class="box">
-    <p class="hint" style="margin:0">在上面点中你想要的方案，这里会生成一句话，复制发过去就行。</p>
-    <div class="reply" id="reply"><p id="replyText"></p><button id="copy">复制这句话</button></div>
-  </div>
 </main>
-<footer class="wrap">票价查询时间 2026-11-22 03:00–04:30（UTC），1 英镑 ≈ 8.76 元。价格会变，以订票页为准。<br>「订这张票」打开 Google 机票的订票页，在国内需要能访问 Google；「携程查这班」在国内可直接打开。</footer>
+<footer class="wrap">机票价格查于 2026-11-22 03:00–04:30（UTC），酒店价格查于同日 05:00–06:10。1 英镑 ≈ 8.76 元。价格会变，以订购页为准。<br>酒店「Booking 订房」和机票「携程查这班」在国内可直接打开；带 Google 字样的按钮需要能访问 Google。</footer>
+
+<div class="bar"><div class="wrap in">
+  <div class="t"><small id="barSel"></small><b class="num" id="barTot"></b></div>
+  <button id="copy">就选这个</button>
+</div></div>
 
 <script>
 var G='https://www.google.com/travel/flights/booking?curr=GBP&hl=zh-CN&tfs=';
@@ -201,64 +226,119 @@ var F={
  aa:{d:'1-12',a:'LAS',at:'05:00',b:'PVG',bt:'16:50+1',via:'达拉斯 1h',al:'美国航空',fn:'AA2632 / AA127',p:472,g:'CBwQAhphEgoyMDI3LTAxLTEyIiAKA0xBUxIKMjAyNy0wMS0xMhoDREZXKgJBQTIEMjYzMiIfCgNERlcSCjIwMjctMDEtMTIaA1BWRyoCQUEyAzEyN2oHCAESA0xBU3IHCAESA1BWR0ABSAFwAYIBCwj___________8BmAEC',c:C('las','sha','2027-01-12')}
 };
 var P=[
- {id:'mid',nm:'折中',badge:['rec','建议'],ds:'便宜，办证不赶 · 不用多请假',lead:'12 月 30 日下班后飞香港，31 日上午办证，当晚出发，元旦中午到洛杉矶。',cal:'std',
-  legs:[['her','cx381'],['him','ey'],['both','pr'],['both','f9'],['him','b6'],['her','ac']],
-  pro:['比最便宜只多 £95','身份证可以约上午','元旦就到洛杉矶，多玩几天'],con:['不在香港跨年','马尼拉机场要过夜']},
- {id:'b',nm:'最便宜',badge:['low','规则内最低价'],ds:'12-31 当天早上才到香港 · 不用多请假',lead:'和「折中」只差一段：她 12 月 31 日当天早上才飞香港。',cal:'std',
-  legs:[['her','hx31'],['him','ey'],['both','pr'],['both','f9'],['him','b6'],['her','ac']],
-  pro:['不多请假的最低价','少住一晚香港'],con:['只能约下午办证，早班机一晚点就悬','马尼拉机场要过夜']},
- {id:'a',nm:'舒服',ds:'在香港跨年，首尔只停 4 小时 · 不用多请假',lead:'12 月 31 日办完证在香港过夜，元旦下午出发。',cal:'stdA',
-  legs:[['her','cx381'],['him','ey'],['both','yp'],['both','aa314'],['him','b6'],['her','aa']],
-  pro:['办证从容','能在香港跨年','路上少熬一夜'],con:['比「折中」贵约 £650','这班票价波动大']},
- {id:'c',nm:'全直飞',ds:'长途全部直飞，最省力 · 不用多请假',lead:'伦敦、香港、洛杉矶之间全部直飞，回伦敦也直飞。',cal:'stdA',
-  legs:[['her','cx381'],['him','cx256'],['both','dl0101'],['both','dl2653'],['him','ba274'],['her','aa']],
-  pro:['不用转机不用熬夜','元旦早上就到洛杉矶'],con:['最贵，比「折中」多 £1,400','他 12-31 下午才到香港']},
- {id:'d',nm:'早走',badge:['extra','要多请 3 天假'],ds:'最便宜、直飞、19 天',lead:'12 月 26 日周六出发，28 日上午办证，29 日直飞洛杉矶。',cal:'early',
-  legs:[['her','hx26'],['him','qr'],['both','dl1229'],['both','aa314'],['him','b6'],['her','aa']],
-  pro:['五套里最便宜','跨太平洋直飞','假期 19 天，在美国多三天'],con:['12 月 29–31 日要另外请 3 天假']}
+ {id:'mid',nm:'折中',badge:['rec','建议'],ds:'办证不赶，不用多请假',lead:'12 月 30 日下班后飞香港，31 日上午办证，当晚出发，元旦中午到洛杉矶。',cal:'std',
+  legs:[['her','cx381'],['him','ey'],['both','pr'],['both','f9'],['him','b6'],['her','ac']],stay:{hk:'hk1',la:'la3',lv:'lv8'},
+  pro:['比最省的只多一晚香港酒店和 £95 机票','身份证可以约上午','元旦就到洛杉矶'],con:['不在香港跨年','马尼拉机场要过夜','香港那晚只有她住，他 31 日早上到']},
+ {id:'b',nm:'最省',badge:['low','合计最低'],ds:'12-31 当天早上才到香港，不住香港',lead:'和「折中」只差一段：她 12 月 31 日当天早上才飞香港，香港不过夜。',cal:'std',
+  legs:[['her','hx31'],['him','ey'],['both','pr'],['both','f9'],['him','b6'],['her','ac']],stay:{hk:null,la:'la3',lv:'lv8'},
+  pro:['机票加住宿合计最低','不用订香港酒店'],con:['只能约下午办证，早班机一晚点就悬','白天要拖着行李，马尼拉机场过夜']},
+ {id:'a',nm:'舒服',ds:'在香港跨年，首尔只停 4 小时',lead:'12 月 31 日办完证在香港过夜，元旦下午出发。',cal:'stdA',
+  legs:[['her','cx381'],['him','ey'],['both','yp'],['both','aa314'],['him','b6'],['her','aa']],stay:{hk:'hk2',la:'la3',lv:'lv8'},
+  pro:['办证从容','能在香港跨年','路上少熬一夜'],con:['香港跨年那晚酒店贵','这班机票价格波动大']},
+ {id:'c',nm:'全直飞',ds:'长途全部直飞，不住洛杉矶',lead:'伦敦、香港、洛杉矶之间全部直飞，元旦当天转到拉斯维加斯。',cal:'stdA',
+  legs:[['her','cx381'],['him','cx256'],['both','dl0101'],['both','dl2653'],['him','ba274'],['her','aa']],stay:{hk:'hk2',la:null,lv:'lv11'},
+  pro:['不用转机不用熬夜','只换一次酒店'],con:['合计最贵','不在洛杉矶停留','他 12-31 下午才到香港']},
+ {id:'d',nm:'早走',badge:['extra','要多请 3 天假'],ds:'机票最便宜且直飞，但多住 5 晚',lead:'12 月 26 日周六出发，28 日上午办证，29 日直飞洛杉矶，假期 19 天。',cal:'early',
+  legs:[['her','hx26'],['him','qr'],['both','dl1229'],['both','aa314'],['him','b6'],['her','aa']],stay:{hk:'hk3',la:'la6',lv:'lv8'},
+  pro:['机票五套里最便宜','跨太平洋直飞','在美国多玩三天'],con:['12 月 29–31 日要另外请 3 天假','多住 5 晚，合计反而比「折中」贵']}
 ];
-var CNY=8.758,MAX=4340;
-function sum(p){var t=0,h=0,m=0;p.legs.forEach(function(l){var x=F[l[1]].p;if(l[0]=='both'){t+=2*x;h+=x;m+=x}else{t+=x;if(l[0]=='her')h+=x;else m+=x}});return{t:t,h:h,m:m}}
+var BK='https://www.booking.com/hotel/';
+var GH=function(q,a,b){return 'https://www.google.com/travel/search?hl=zh-CN&curr=GBP&q='+encodeURIComponent('hotels in '+q+' from '+a+' to '+b+' for 2 adults')};
+var H={
+ hop:{nm:'Hop Inn on Nathan Road',city:'香港 · 尖沙咀',why:'弥敦道上的小型设计旅舍，评分 4.6（492 条）。房间小，胜在便宜干净。',slug:'hk/hop-inn-on-nathan-road-hong-kong',area:'Tsim Sha Tsui Hong Kong'},
+ hart:{nm:'Hotel Hart',city:'香港 · 尖沙咀',why:'四星，评分 3.8（468 条）。',slug:'hk/hart',area:'Tsim Sha Tsui Hong Kong'},
+ ymca:{nm:'The Salisbury YMCA（港青）',city:'香港 · 尖沙咀海旁',why:'四星，评分 4.2（3,500 条），就在维港边上。',slug:'hk/salisbury',area:'Tsim Sha Tsui Hong Kong'},
+ free:{nm:'Freehand Los Angeles',city:'洛杉矶 · 市中心',why:'四星，评分 4.1（3,500 条）。市中心晚上出门建议打车。',slug:'us/freehand-los-angeles',area:'Downtown Los Angeles'},
+ gate:{nm:'Gateway Hotel Santa Monica',city:'洛杉矶 · 圣莫尼卡',why:'三星，评分 4.1（1,300 条），去海边方便。',slug:'us/gateway-hotel-santa-monica',area:'Santa Monica'},
+ loews:{nm:'Loews Hollywood Hotel',city:'洛杉矶 · 好莱坞',why:'四星，评分 4.3（5,200 条），在好莱坞中心。',slug:'us/loews-hollywood-los-angeles',area:'Hollywood Los Angeles'},
+ exc:{nm:'Excalibur Hotel & Casino',city:'拉斯维加斯 · 大道南端',why:'评分 4.1（87,000 条）。便宜，但去 CES 会场要坐车。',slug:'us/excalibur',area:'Las Vegas Strip'},
+ flam:{nm:'Flamingo Las Vegas',city:'拉斯维加斯 · 大道中段',why:'评分 4.0（75,600 条）。有单轨电车站，坐车到会展中心。',slug:'us/flamingo-casino',area:'Las Vegas Strip'},
+ west:{nm:'Westgate Las Vegas Resort',city:'拉斯维加斯 · 会展中心旁',why:'评分 4.0，紧邻会展中心，走路去 CES。会期价格高。',slug:'us/las-vegas-hotel',area:'Las Vegas Strip'}
+};
+var S={
+ hk1:{a:'2026-12-30',b:'2026-12-31',al:'30 December 2026',bl:'31 December 2026',n:1,lab:'12-30 住 1 晚',
+      eco:['hop',50,'klook',[['Agoda',53],['Trip.com',56],['Booking',60]]],mid:['hart',134,'Agoda',[['Trip.com',148],['Booking',159]]],lux:['ymca',182,'klook',[['Trip.com',189],['Booking',203]]]},
+ hk2:{a:'2026-12-30',b:'2027-01-01',al:'30 December 2026',bl:'1 January 2027',n:2,lab:'12-30 至 1-1，2 晚（含跨年夜）',
+      eco:['hart',190,'Agoda',[['Trip.com',203],['Booking',220]],'Hop Inn 这两晚查不到房，省钱档也用这家'],mid:['hart',190,'Agoda',[['Trip.com',203],['Booking',220]]],lux:['ymca',281,'klook',[['Trip.com',287],['Booking',323]]]},
+ hk3:{a:'2026-12-26',b:'2026-12-29',al:'26 December 2026',bl:'29 December 2026',n:3,lab:'12-26 至 12-29，3 晚',
+      eco:['hop',43,'Agoda',[['Trip.com',43],['Booking',55]]],mid:['hart',107,'Agoda',[['Trip.com',124],['Booking',126]]],lux:['ymca',219,'klook',[['Trip.com',246],['Booking',248]]]},
+ la3:{a:'2027-01-01',b:'2027-01-04',al:'1 January 2027',bl:'4 January 2027',n:3,lab:'1-1 至 1-4，3 晚',
+      eco:['free',117,'Hotels.com',[['Expedia',121],['Booking',146]]],mid:['gate',164,'Expedia',[['Trip.com',164],['Booking',189]]],lux:['loews',201,'klook',[['Expedia',202],['Agoda',241]]]},
+ la6:{a:'2026-12-29',b:'2027-01-04',al:'29 December 2026',bl:'4 January 2027',n:6,lab:'12-29 至 1-4，6 晚',
+      eco:['free',154,'Priceline',[['Hotels.com',177],['Booking',190]]],mid:['gate',185,'Booking',[['Expedia',193],['Hotels.com',193]]],lux:['loews',214,'Expedia',[['Hotels.com',214],['官网',241]]]},
+ lv8:{a:'2027-01-04',b:'2027-01-12',al:'4 January 2027',bl:'12 January 2027',n:8,lab:'1-4 至 1-12，8 晚（含 CES）',
+      eco:['exc',104,'Agoda',[['Trip.com',104],['Expedia',105],['Booking',119]]],mid:['flam',148,'Agoda',[['Booking',149]]],lux:['west',270,'Priceline',[['Trip.com',279],['Booking',346]]]},
+ lv11:{a:'2027-01-01',b:'2027-01-12',al:'1 January 2027',bl:'12 January 2027',n:11,lab:'1-1 至 1-12，11 晚（含 CES）',
+      eco:['exc',104,'Expedia',[['Hotels.com',104],['Booking',117]]],mid:['flam',140,'Hotels.com',[['Booking',157]]],lux:['west',289,'Expedia',[['Hotels.com',289],['Booking',290]]]}
+};
+var TIERS=[['eco','省钱','旅舍 + 大道南端'],['mid','均衡','四星 + 单轨到会场'],['lux','舒服','海边 + 走路去会场']];
+var CNY=8.758,cur='mid',tier='mid';
+function fsum(p){var t=0,h=0,m=0;p.legs.forEach(function(l){var x=F[l[1]].p;if(l[0]=='both'){t+=2*x;h+=x;m+=x}else{t+=x;if(l[0]=='her')h+=x;else m+=x}});return{t:t,h:h,m:m}}
+function ssum(p,t){var s=0;['hk','la','lv'].forEach(function(k){var id=p.stay[k];if(id)s+=S[id][t][1]*S[id].n});return s}
+function tot(p,t){return fsum(p).t+ssum(p,t)}
 function gbp(n){return '£'+n.toLocaleString('en-GB')}
 function cny(n){return '¥'+(Math.round(n*CNY/100)*100).toLocaleString('en-GB')}
-var plansEl=document.getElementById('plans'),detail=document.getElementById('detail'),cur='mid';
+function byId(id){return P.filter(function(x){return x.id==id})[0]}
+function tname(){return TIERS.filter(function(t){return t[0]==tier})[0][1]}
+var $=function(id){return document.getElementById(id)};
 function renderPlans(){
-  plansEl.innerHTML=P.map(function(p){var s=sum(p);return '<button class="plan'+(p.id==cur?' on':'')+'" data-id="'+p.id+'"><span class="nm">'+p.nm+(p.badge?'<span class="badge '+p.badge[0]+'">'+p.badge[1]+'</span>':'')+'</span><span class="pr">'+gbp(s.t)+'<small>≈ '+cny(s.t)+'</small></span><span class="ds">'+p.ds+'</span><span class="meter"><i style="width:'+Math.round(s.t/MAX*100)+'%"></i></span></button>'}).join('');
+  $('plans').innerHTML=P.map(function(p){var f=fsum(p).t,s=ssum(p,tier);return '<button class="plan'+(p.id==cur?' on':'')+'" data-id="'+p.id+'" aria-pressed="'+(p.id==cur)+'"><span class="rd"></span><span class="nm">'+p.nm+(p.badge?'<span class="badge '+p.badge[0]+'">'+p.badge[1]+'</span>':'')+'</span><span class="pr num">'+gbp(f+s)+'<small>机票 '+gbp(f)+' + 住宿 '+gbp(s)+'</small></span><span class="ds">'+p.ds+'</span></button>'}).join('');
+}
+function renderTiers(){var p=byId(cur);
+  $('tiers').innerHTML=TIERS.map(function(t){return '<button class="tier'+(t[0]==tier?' on':'')+'" data-t="'+t[0]+'" aria-pressed="'+(t[0]==tier)+'"><b>'+t[1]+'</b><span>'+t[2]+'</span><em class="num">'+gbp(ssum(p,t[0]))+'</em></button>'}).join('');
 }
 var DAYS=['12-26','12-27','12-28','12-29','12-30','12-31','1-1','1-2','1-3','1-4','1-5','1-6','1-7','1-8','1-9','1-10','1-11','1-12','1-13','1-14'],WD='六日一二三四五六日一二三四五六日一二三四';
 var CALS={
  std:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去香港'],[6,6,'办证·出发'],[7,10,'洛杉矶'],[11,11,'去赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
- stdA:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去香港'],[6,6,'办证·跨年'],[7,7,'飞美国'],[8,10,'洛杉矶'],[11,11,'去赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
+ stdA:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去香港'],[6,6,'办证·跨年'],[7,7,'飞美国'],[8,10,'美国'],[11,11,'赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
  early:{t:['wk','wk','comp','extra','extra','extra','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[0,18],ev:[[1,2,'去香港'],[3,3,'办证'],[4,4,'飞美国'],[5,10,'洛杉矶一带'],[11,11,'去赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]}
 };
 function cal(k){var c=CALS[k];
   return '<div class="calw"><div class="cal">'+DAYS.map(function(d,i){var on=i>=c.off[0]&&i<=c.off[1];return '<div class="d '+c.t[i]+(on?'':' dim')+'">'+WD[i]+'<b>'+d.split('-')[1]+'</b></div>'}).join('')+'</div><div class="ev">'+c.ev.map(function(e){return '<span style="grid-column:'+e[0]+'/'+(e[1]+1)+'">'+e[2]+'</span>'}).join('')+'</div></div>'+
-  '<div class="legend"><span><i style="background:var(--work)"></i>上班</span><span><i style="background:var(--wk)"></i>周末</span><span><i style="background:var(--comp)"></i>调休</span><span><i style="background:var(--hol)"></i>元旦</span><span><i style="background:var(--wed)"></i>婚假</span>'+(k=='early'?'<span><i style="background:var(--violet)"></i>另请的假</span>':'')+'</div>';
+  '<div class="legend"><span><i style="background:var(--work)"></i>上班</span><span><i style="background:var(--wk)"></i>周末</span><span><i style="background:var(--comp)"></i>调休</span><span><i style="background:var(--hol)"></i>元旦</span><span><i style="background:var(--wed)"></i>婚假</span>'+(k=='early'?'<span><i style="background:var(--violet)"></i>另请的假</span>':'')+'</div><div class="swipe">← 左右滑动看完整日历</div>';
 }
 var WHO={her:'她',him:'他',both:'两人'};
 function ticket(l){var f=F[l[1]],dd=f.d.split('-');
   return '<div class="tk"><div class="stub"><div class="mo">'+dd[0]+' 月</div><div class="dy">'+dd[1]+'</div><div class="who '+l[0]+'">'+WHO[l[0]]+'</div></div><div class="main">'+
-   '<div class="leg"><div class="pt"><b>'+f.a+'</b><span>'+f.at+'</span></div><div class="mid"><em>✈</em><br>'+f.via+'</div><div class="pt r"><b>'+f.b+'</b><span>'+f.bt+'</span></div></div>'+
-   '<div class="meta"><span class="fn">'+f.al+' · <b>'+f.fn+'</b></span><span class="p">'+gbp(f.p)+(l[0]=='both'?' ×2':'')+'</span></div>'+
+   '<div class="leg"><div class="pt"><b>'+f.a+'</b><span>'+f.at+'</span></div><div class="mid">'+f.via+'</div><div class="pt r"><b>'+f.b+'</b><span>'+f.bt+'</span></div></div>'+
+   '<div class="meta"><span class="fn">'+f.al+' · <b>'+f.fn+'</b></span><span class="p num">'+gbp(f.p)+(l[0]=='both'?' ×2':'')+'</span></div>'+
    (f.n?'<div class="note">'+f.n+'</div>':'')+
-   '<div class="btns"><a class="btn" target="_blank" rel="noopener" href="'+G+f.g+'">订这张票</a><a class="btn alt" target="_blank" rel="noopener" href="'+f.c+'">携程查这班</a></div></div></div>';
+   '<div class="btns"><a class="btn" target="_blank" rel="noopener" href="'+G+f.g+'">订这张票（Google）</a><a class="btn alt" target="_blank" rel="noopener" href="'+f.c+'">携程查这班</a></div></div></div>';
 }
-function renderDetail(){var p=P.filter(function(x){return x.id==cur})[0],s=sum(p);
-  detail.innerHTML='<div class="dhead"><h3>'+p.nm+'</h3><p>'+p.lead+'</p><div class="split"><div><b>'+gbp(s.t)+'</b>两人合计 ≈ '+cny(s.t)+'</div><div><b>'+gbp(s.h)+'</b>她的机票</div><div><b>'+gbp(s.m)+'</b>他的机票</div></div></div>'+
+var NOSTAY={hk:'香港不过夜：她 12-31 早上到，当晚两人就出发。',la:'不住洛杉矶：元旦早上到，当晚飞拉斯维加斯。'};
+function stay(p,k){var id=p.stay[k];if(!id)return '<div class="stay none">'+NOSTAY[k]+'</div>';
+  var s=S[id],e=s[tier],h=H[e[0]];
+  var bk=BK+h.slug+'.zh-cn.html?checkin='+s.a+'&checkout='+s.b+'&group_adults=2&no_rooms=1&selected_currency=GBP';
+  return '<div class="stay"><div class="city">'+h.city+'</div><h4>'+h.nm+'</h4><p class="why">'+h.why+'</p>'+(e[4]?'<div class="note">'+e[4]+'</div>':'')+
+   '<div class="row"><span>'+s.lab+' · 每晚 '+gbp(e[1])+' 起</span><b class="num">'+gbp(e[1]*s.n)+'</b></div>'+
+   '<div class="chan"><span class="best">'+e[2]+' '+gbp(e[1])+'</span>'+e[3].map(function(c){return '<span>'+c[0]+' '+gbp(c[1])+'</span>'}).join('')+'</div>'+
+   '<div class="btns"><a class="btn" target="_blank" rel="noopener" href="'+bk+'">Booking 订房</a><a class="btn alt" target="_blank" rel="noopener" href="'+GH(h.area,s.al,s.bl)+'">Google 比这一带</a></div></div>';
+}
+function renderDetail(){var p=byId(cur),f=fsum(p),s=ssum(p,tier);
+  $('detail').innerHTML='<div class="dhead"><h3>'+p.nm+' · '+tname()+'住宿</h3><p>'+p.lead+'</p><div class="split"><div class="tot"><b class="num">'+gbp(f.t+s)+'</b>合计 ≈ '+cny(f.t+s)+'</div><div><b class="num">'+gbp(f.t)+'</b>两人机票</div><div><b class="num">'+gbp(s)+'</b>住宿</div></div></div>'+
   '<div class="dbody"><div class="sec">假期怎么排</div>'+cal(p.cal)+
-  '<div class="sec">六张票</div>'+p.legs.map(ticket).join('')+
+  '<div class="sec">六张机票<small>她 '+gbp(f.h)+' · 他 '+gbp(f.m)+'</small></div>'+p.legs.map(ticket).join('')+
+  '<div class="sec">住宿<small>一间房两人</small></div>'+stay(p,'hk')+stay(p,'la')+stay(p,'lv')+
   '<div class="sec">好处和代价</div><div class="pc"><div class="pro"><h4>好处</h4><ul>'+p.pro.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div class="con"><h4>代价</h4><ul>'+p.con.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div></div>';
-  document.getElementById('reply').style.display='block';
-  document.getElementById('replyText').textContent='我选「'+p.nm+'」方案，两人机票约 '+gbp(s.t)+'（≈ '+cny(s.t)+'）。';
 }
-plansEl.addEventListener('click',function(e){var b=e.target.closest('.plan');if(!b)return;cur=b.getAttribute('data-id');renderPlans();renderDetail();detail.scrollIntoView({behavior:'smooth',block:'start'})});
-document.getElementById('copy').addEventListener('click',function(){var t=document.getElementById('replyText').textContent,b=this;
-  function ok(){b.textContent='已复制';setTimeout(function(){b.textContent='复制这句话'},1600)}
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){})}else{var r=document.createRange();r.selectNodeContents(document.getElementById('replyText'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok()}catch(e){}}
+function renderMatrix(){var min=Infinity;P.forEach(function(p){TIERS.forEach(function(t){min=Math.min(min,tot(p,t[0]))})});
+  $('matrix').innerHTML='<tr><th></th>'+TIERS.map(function(t){return '<th>'+t[1]+'</th>'}).join('')+'</tr>'+P.map(function(p){return '<tr><td class="l">'+p.nm+'</td>'+TIERS.map(function(t){var v=tot(p,t[0]);return '<td class="c'+(v==min?' min':'')+(p.id==cur&&t[0]==tier?' on':'')+'" data-id="'+p.id+'" data-t="'+t[0]+'">'+v.toLocaleString('en-GB')+'</td>'}).join('')+'</tr>'}).join('');
+}
+function msg(){var p=byId(cur),v=tot(p,tier);return '我选「'+p.nm+'」行程 + 「'+tname()+'」住宿，两人机票加住宿约 '+gbp(v)+'（≈ '+cny(v)+'）。'}
+function renderBar(){var p=byId(cur),v=tot(p,tier);
+  $('barSel').textContent='已选：'+p.nm+' · '+tname()+'住宿';$('barTot').innerHTML=gbp(v)+'<span>≈ '+cny(v)+'</span>';}
+function render(){renderPlans();renderTiers();renderDetail();renderMatrix();renderBar()}
+$('plans').addEventListener('click',function(e){var b=e.target.closest('.plan');if(!b)return;cur=b.getAttribute('data-id');render();$('s2').scrollIntoView({behavior:'smooth',block:'start'})});
+$('tiers').addEventListener('click',function(e){var b=e.target.closest('.tier');if(!b)return;tier=b.getAttribute('data-t');render();$('s3').scrollIntoView({behavior:'smooth',block:'start'})});
+$('matrix').addEventListener('click',function(e){var c=e.target.closest('td.c');if(!c)return;cur=c.getAttribute('data-id');tier=c.getAttribute('data-t');render();$('s3').scrollIntoView({behavior:'smooth',block:'start'})});
+$('copy').addEventListener('click',function(){var t=msg(),b=this;
+  function ok(){b.textContent='已复制，去发给他';setTimeout(function(){b.textContent='就选这个'},2200)}
+  function fb(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(e){prompt('复制这句话发给他：',t)}document.body.removeChild(ta)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else fb();
 });
 var DP=[['26',373,'no'],['27',398,'no'],['28',592,''],['29',592,''],['30',686,''],['31',717,''],['1-1',859,'hot'],['1-2+',1039,'hot']];
-document.getElementById('chart').innerHTML=DP.map(function(d){return '<div class="col '+d[2]+'"><b>£'+d[1]+'</b><i style="height:'+Math.round(d[1]/1039*100)+'%"></i><span>'+d[0]+'</span></div>'}).join('');
-renderPlans();renderDetail();
+$('chart').innerHTML=DP.map(function(d){return '<div class="col '+d[2]+'"><b>£'+d[1]+'</b><i style="height:'+Math.round(d[1]/1039*130)+'px"></i><span>'+d[0]+'</span></div>'}).join('');
+render();
 </script>
 </body>
 </html>
