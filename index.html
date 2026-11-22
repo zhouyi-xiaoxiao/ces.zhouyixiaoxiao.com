@@ -136,6 +136,29 @@ td.c.on{background:var(--ink);color:var(--paper)}
 .todo li{padding:10px 0 10px 30px;border-top:1px solid var(--line);position:relative;font-size:15px}
 .todo li:first-child{border-top:0}
 .todo li:before{content:"";position:absolute;left:2px;top:14px;width:16px;height:16px;border-radius:5px;border:2px solid var(--gold)}
+.day{border:1px solid var(--line);border-radius:14px;margin:8px 0;background:var(--paper);overflow:hidden}
+.day summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:52px 1fr 18px;gap:10px;align-items:center;padding:10px 12px}
+.day summary::-webkit-details-marker{display:none}
+.day .dt{text-align:center;border-radius:10px;background:var(--soft);padding:5px 0;line-height:1.15}
+.day .dt b{display:block;font:700 17px var(--serif)}
+.day .dt span{font-size:11px;color:var(--mute)}
+.day .hd b{display:block;font:700 15px/1.35 var(--sans)}
+.day .hd span{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.06em}
+.day .ar{color:var(--mute);transition:transform .15s}
+.day[open] .ar{transform:rotate(90deg)}
+.day .its{padding:2px 12px 12px 22px;border-top:1px dashed var(--line)}
+.it{position:relative;padding:10px 0 2px 16px;border-left:2px solid var(--line)}
+.it:before{content:"";position:absolute;left:-6px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.it .tm{font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.it h5{margin:0;font:700 15px/1.4 var(--sans)}
+.it p{margin:2px 0 0;font-size:14px;color:var(--ink);opacity:.85}
+.it .ft{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px;font-size:12px;color:var(--mute)}
+.it .ft a{color:var(--him);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:1px 9px;font-weight:600}
+.tips{background:var(--gold-soft);border-radius:12px;padding:10px 12px 10px 28px;margin:10px 0 0;font-size:14px}
+.tips li{margin:4px 0}
+.daytools{display:flex;gap:8px;margin:0 0 6px}
+.daytools button{border:1px solid var(--line);background:transparent;border-radius:99px;font-size:12px;padding:3px 12px;color:var(--mute);cursor:pointer}
+.ess a{color:var(--him);font-weight:600;text-decoration:none}
 footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--night);color:#f6efe0;padding:10px 0 calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(0,0,0,.25);z-index:9}
 .bar .in{display:flex;align-items:center;gap:12px}
@@ -187,6 +210,8 @@ footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
   <p class="hint">香港飞洛杉矶，单人单程最低价。12 月 26、27 日最便宜，但香港入境处 25–27 日不办公，办不了身份证。</p>
   <div class="box"><div class="chart" id="chart"></div></div>
 
+  <div id="essWrap"></div>
+
   <div class="step"><i>!</i><h2>下单前先做这几件事</h2></div>
   <div class="box" style="margin-top:12px"><ul class="todo">
     <li><b>先约身份证。</b>12 月 28 日和 31 日之前查过有名额，但还没实际预约。约上了再买去香港的票。</li>
@@ -203,6 +228,7 @@ footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
   <button id="copy">就选这个</button>
 </div></div>
 
+<script src="itin.js?v=1"></script>
 <script>
 var G='https://www.google.com/travel/flights/booking?curr=GBP&hl=zh-CN&tfs=';
 var C=function(a,b,d){return 'https://flights.ctrip.com/online/list/oneway-'+a+'-'+b+'?depdate='+d+'&cabin=y_s&adult=1&child=0&infant=0'};
@@ -314,11 +340,33 @@ function stay(p,k){var id=p.stay[k];if(!id)return '<div class="stay none">'+NOST
    '<div class="chan"><span class="best">'+e[2]+' '+gbp(e[1])+'</span>'+e[3].map(function(c){return '<span>'+c[0]+' '+gbp(c[1])+'</span>'}).join('')+'</div>'+
    '<div class="btns"><a class="btn" target="_blank" rel="noopener" href="'+bk+'">Booking 订房</a><a class="btn alt" target="_blank" rel="noopener" href="'+GH(h.area,s.al,s.bl)+'">Google 比这一带</a></div></div>';
 }
+var IT=window.IT||null;
+var ITP={mid:[['hk_mid'],['la_3'],['lv_pre'],['ces_show'],['lv_post']],b:[['hk_b'],['la_3'],['lv_pre'],['ces_show'],['lv_post']],a:[['hk_a'],['la_3'],['lv_pre'],['ces_show'],['lv_post']],
+ c:[['hk_a'],['la_0'],['lv_extra'],['lv_pre',['01-05']],['ces_show'],['lv_post']],d:[['hk_d'],['la_6'],['lv_pre'],['ces_show'],['lv_post']]};
+var CITY={hk:'香港',la:'洛杉矶',lv:'拉斯维加斯',ces:'拉斯维加斯 · CES'};
+var WDN={'12-26':'周六','12-27':'周日','12-28':'周一','12-29':'周二','12-30':'周三','12-31':'周四','01-01':'周五','01-02':'周六','01-03':'周日','01-04':'周一','01-05':'周二','01-06':'周三','01-07':'周四','01-08':'周五','01-09':'周六','01-10':'周日','01-11':'周一','01-12':'周二','01-13':'周三'};
+function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function okUrl(u){return /^https:\/\//.test(u||'')}
+function itin(p){if(!IT)return '';var days={},order=[],tips=[];
+  ITP[p.id].forEach(function(e){var m=IT.modules[e[0]];if(!m)return;var c=CITY[e[0].split('_')[0]];
+    m.days.forEach(function(d){if(e[1]&&e[1].indexOf(d.date)<0)return;if(!days[d.date]){days[d.date]={city:[],head:[],items:[]};order.push(d.date)}
+      var D=days[d.date];if(D.city.indexOf(c)<0)D.city.push(c);D.head.push(d.headline);D.items=D.items.concat(d.items)});
+    (m.tips||[]).forEach(function(t){tips.push([c,t])})});
+  var key=function(d){return (d.slice(0,2)=='12'?'0':'1')+d};order.sort(function(x,y){return key(x)<key(y)?-1:1});
+  var h='<div class="sec">每天在哪、怎么玩<small>'+order.length+' 天</small></div><div class="daytools"><button data-open="1">全部展开</button><button data-open="0">全部收起</button></div>';
+  h+=order.map(function(d,i){var D=days[d];return '<details class="day"'+(i==0?' open':'')+'><summary><div class="dt"><b>'+(+d.slice(0,2))+'/'+(+d.slice(3))+'</b><span>'+(WDN[d]||'')+'</span></div><div class="hd"><span>'+esc(D.city.join(' → '))+'</span><b>'+esc(D.head.join('；'))+'</b></div><div class="ar">›</div></summary><div class="its">'+
+    D.items.map(function(x){return '<div class="it"><div class="tm">'+esc(x.time)+'</div><h5>'+esc(x.title)+'</h5><p>'+esc(x.detail)+'</p>'+((x.cost||okUrl(x.url))?'<div class="ft">'+(x.cost?'<span>'+esc(x.cost)+'</span>':'')+(okUrl(x.url)?'<a target="_blank" rel="noopener" href="'+esc(x.url)+'">官网 / 预订</a>':'')+'</div>':'')+'</div>'}).join('')+'</div></details>'}).join('');
+  if(tips.length){var seen={},g={};tips.forEach(function(t){if(seen[t[1]])return;seen[t[1]]=1;(g[t[0]]=g[t[0]]||[]).push(t[1])});
+    h+=Object.keys(g).map(function(c){return '<details class="day"><summary><div class="dt"><b>i</b><span>提醒</span></div><div class="hd"><span>'+esc(c)+'</span><b>实用提醒 '+g[c].length+' 条</b></div><div class="ar">›</div></summary><div class="its"><ul class="tips">'+g[c].map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul></div></details>'}).join('')}
+  return h}
+function renderEss(){if(!IT||!IT.essentials||!IT.essentials.length)return;
+  $('essWrap').innerHTML='<div class="step"><i>✓</i><h2>出发前要办的事</h2></div><div class="box ess" style="margin-top:12px"><ul class="todo">'+IT.essentials.map(function(e){return '<li><b>'+esc(e.title)+'。</b>'+esc(e.detail)+(okUrl(e.url)?' <a target="_blank" rel="noopener" href="'+esc(e.url)+'">官方页面</a>':'')+'</li>'}).join('')+'</ul></div>'}
 function renderDetail(){var p=byId(cur),f=fsum(p),s=ssum(p,tier);
   $('detail').innerHTML='<div class="dhead"><h3>'+p.nm+' · '+tname()+'住宿</h3><p>'+p.lead+'</p><div class="split"><div class="tot"><b class="num">'+gbp(f.t+s)+'</b>合计 ≈ '+cny(f.t+s)+'</div><div><b class="num">'+gbp(f.t)+'</b>两人机票</div><div><b class="num">'+gbp(s)+'</b>住宿</div></div></div>'+
   '<div class="dbody"><div class="sec">假期怎么排</div>'+cal(p.cal)+
   '<div class="sec">六张机票<small>她 '+gbp(f.h)+' · 他 '+gbp(f.m)+'</small></div>'+p.legs.map(ticket).join('')+
   '<div class="sec">住宿<small>一间房两人</small></div>'+stay(p,'hk')+stay(p,'la')+stay(p,'lv')+
+  itin(p)+
   '<div class="sec">好处和代价</div><div class="pc"><div class="pro"><h4>好处</h4><ul>'+p.pro.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><div class="con"><h4>代价</h4><ul>'+p.con.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div></div>';
 }
 function renderMatrix(){var min=Infinity;P.forEach(function(p){TIERS.forEach(function(t){min=Math.min(min,tot(p,t[0]))})});
@@ -338,7 +386,8 @@ $('copy').addEventListener('click',function(){var t=msg(),b=this;
 });
 var DP=[['26',373,'no'],['27',398,'no'],['28',592,''],['29',592,''],['30',686,''],['31',717,''],['1-1',859,'hot'],['1-2+',1039,'hot']];
 $('chart').innerHTML=DP.map(function(d){return '<div class="col '+d[2]+'"><b>£'+d[1]+'</b><i style="height:'+Math.round(d[1]/1039*130)+'px"></i><span>'+d[0]+'</span></div>'}).join('');
-render();
+$('detail').addEventListener('click',function(e){var b=e.target.closest('.daytools button');if(!b)return;var o=b.getAttribute('data-open')=='1';[].forEach.call(document.querySelectorAll('#detail details.day'),function(d){d.open=o})});
+render();renderEss();
 </script>
 </body>
 </html>
