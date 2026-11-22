@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CES 2027 行程方案</title>
+<style>
+:root{
+  --bg:#f6f3ee; --card:#fffdf9; --ink:#1f1b16; --mute:#6f675c; --line:#e3dccf;
+  --accent:#b4532a; --accent-soft:#f5e3d8; --ok:#2f6f4f; --ok-soft:#dcefe3;
+  --warn:#9a6a00; --warn-soft:#f7ecc9;
+  --work:#d9d4ca; --comp:#e9a23b; --hol:#5a9bd5; --wed:#c75d7a; --wk:#b9c7b0; --extra:#8a5fd0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16130f; --card:#201c17; --ink:#f1ebe1; --mute:#a59c8e; --line:#373027;
+    --accent:#e8875c; --accent-soft:#3a251b; --ok:#7cc79c; --ok-soft:#1d3327;
+    --warn:#e6bd5a; --warn-soft:#3a3015;
+    --work:#4a443b; --comp:#c98a2c; --hol:#4a82b5; --wed:#b14f6b; --wk:#5f7257; --extra:#7a57b8;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:760px;margin:0 auto;padding:28px 16px 64px}
+h1{font-size:28px;line-height:1.25;margin:0 0 6px;letter-spacing:.01em}
+h2{font-size:20px;margin:40px 0 12px}
+h3{font-size:18px;margin:0}
+p{margin:8px 0}
+.sub{color:var(--mute);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.lead{border-left:4px solid var(--accent);padding-left:12px;margin:18px 0}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;margin-right:6px;white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.price{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.price small{font-size:14px;font-weight:500;color:var(--mute)}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+/* bars */
+.bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:74px 1fr;gap:10px;align-items:center;font-size:14px}
+.bar{height:26px;border-radius:7px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;font-weight:600;font-variant-numeric:tabular-nums;font-size:13px;min-width:86px}
+.bar.best{background:var(--ok)}
+.bar.x{background:var(--extra)}
+/* calendar strip */
+.cal-wrap{overflow-x:auto;margin:10px -4px 4px;padding:0 4px}
+.cal{display:grid;grid-template-columns:repeat(20,minmax(30px,1fr));gap:3px;min-width:640px}
+.d{border-radius:6px;padding:4px 0 5px;text-align:center;font-size:11px;line-height:1.25;background:var(--work);color:var(--ink)}
+.d b{display:block;font-size:13px}
+.d.comp{background:var(--comp);color:#fff}.d.hol{background:var(--hol);color:#fff}
+.d.wed{background:var(--wed);color:#fff}.d.wk{background:var(--wk)}.d.extra{background:var(--extra);color:#fff}
+.d.off{outline:2px solid var(--ink);outline-offset:-2px}
+.ev{display:grid;grid-template-columns:repeat(20,minmax(30px,1fr));gap:3px;min-width:640px;margin-top:3px;font-size:11px;color:var(--mute);text-align:center}
+.ev span{grid-row:1;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--mute);margin:8px 0}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* flights */
+.fl{border-top:1px solid var(--line);padding:10px 0;display:grid;grid-template-columns:54px 1fr auto;gap:10px;font-size:14px;align-items:start}
+.fl:first-of-type{border-top:0}
+.who{font-size:12px;font-weight:700;border-radius:6px;text-align:center;padding:2px 0;background:var(--line)}
+.who.her{background:var(--wed);color:#fff}.who.him{background:var(--hol);color:#fff}.who.both{background:var(--ink);color:var(--bg)}
+.fl .t{color:var(--mute);font-size:13px}
+.fl .p{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+details{margin-top:10px}
+summary{cursor:pointer;font-weight:600;color:var(--accent)}
+a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tw{overflow-x:auto}
+.pick{display:grid;gap:8px;margin-top:10px}
+.pick button{font:inherit;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-align:left;cursor:pointer}
+.pick button.on{border-color:var(--ok);background:var(--ok-soft)}
+#msg{margin-top:10px;padding:12px;border-radius:10px;background:var(--ok-soft);display:none;word-break:break-all}
+footer{margin-top:40px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<p class="sub">2026-12 → 2027-01 · 上海 / 伦敦 → 香港 → 洛杉矶 → 拉斯维加斯</p>
+<h1>CES 2027 行程：五套方案，选一个</h1>
+<p class="lead">不多请假的话，建议选<strong>「折中」</strong>：两人机票约 <strong>£2,939（≈¥25,700）</strong>，连休 14 天，提前一晚到香港，12 月 31 日上午办身份证。能多请 3 天假，就选「早走」：更便宜，直飞，假期 19 天。</p>
+<p class="sub">票价是 2026-11-22 凌晨在 Google Flights 查到的单人经济舱单程价，随时会变；还没有下单。人民币按 1 英镑 ≈ 8.76 元折算。</p>
+
+<h2>先看总价</h2>
+<div class="card">
+  <div class="bars">
+    <div class="bar-row"><span>早走 D</span><div class="bar x" style="width:64%">£2,760 · ¥24,200</div></div>
+    <div class="bar-row"><span>最便宜 B</span><div class="bar" style="width:66%">£2,844 · ¥24,900</div></div>
+    <div class="bar-row"><span><b>折中</b></span><div class="bar best" style="width:68%">£2,939 · ¥25,700</div></div>
+    <div class="bar-row"><span>舒服 A</span><div class="bar" style="width:83%">£3,595 · ¥31,500</div></div>
+    <div class="bar-row"><span>全直飞 C</span><div class="bar" style="width:100%">£4,340 · ¥38,000</div></div>
+  </div>
+  <p class="sub">两人全部机票合计，不含酒店。紫色的「早走」需要在婚假和调休之外多请 3 天假。</p>
+</div>
+
+<h2>假期怎么排</h2>
+<div class="card">
+  <h3>不多请假：连休 14 天（12-31 至 1-13）</h3>
+  <p class="sub">调休 1 天办身份证 + 元旦 3 天 + 婚假 10 天，1 月 14 日上班。折中、最便宜、舒服、全直飞四套都按这个排。</p>
+  <div class="cal-wrap">
+    <div class="cal">
+      <div class="d wk">六<b>26</b></div><div class="d wk">日<b>27</b></div><div class="d">一<b>28</b></div><div class="d">二<b>29</b></div><div class="d">三<b>30</b></div>
+      <div class="d comp off">四<b>31</b></div><div class="d hol off">五<b>1</b></div><div class="d hol off">六<b>2</b></div><div class="d hol off">日<b>3</b></div>
+      <div class="d wed off">一<b>4</b></div><div class="d wed off">二<b>5</b></div><div class="d wed off">三<b>6</b></div><div class="d wed off">四<b>7</b></div><div class="d wed off">五<b>8</b></div><div class="d wed off">六<b>9</b></div><div class="d wed off">日<b>10</b></div><div class="d wed off">一<b>11</b></div><div class="d wed off">二<b>12</b></div><div class="d wed off">三<b>13</b></div>
+      <div class="d">四<b>14</b></div>
+    </div>
+    <div class="ev">
+      <span style="grid-column:5/6">去香港</span><span style="grid-column:6/7">办证</span><span style="grid-column:7/11">洛杉矶</span><span style="grid-column:11/12">去赌城</span><span style="grid-column:12/16">CES</span><span style="grid-column:16/18">赌城</span><span style="grid-column:18/20">回程</span>
+    </div>
+  </div>
+  <div class="legend"><span><i style="background:var(--work)"></i>上班</span><span><i style="background:var(--wk)"></i>周末</span><span><i style="background:var(--comp)"></i>调休</span><span><i style="background:var(--hol)"></i>元旦</span><span><i style="background:var(--wed)"></i>婚假</span><span><i style="background:var(--extra)"></i>要另请的假</span></div>
+</div>
+<div class="card">
+  <h3>多请 3 天：连休 19 天（12-26 至 1-13）</h3>
+  <p class="sub">只有「早走」用这个排法。12 月 29–31 日要另外请假。</p>
+  <div class="cal-wrap">
+    <div class="cal">
+      <div class="d wk off">六<b>26</b></div><div class="d wk off">日<b>27</b></div><div class="d comp off">一<b>28</b></div><div class="d extra off">二<b>29</b></div><div class="d extra off">三<b>30</b></div>
+      <div class="d extra off">四<b>31</b></div><div class="d hol off">五<b>1</b></div><div class="d hol off">六<b>2</b></div><div class="d hol off">日<b>3</b></div>
+      <div class="d wed off">一<b>4</b></div><div class="d wed off">二<b>5</b></div><div class="d wed off">三<b>6</b></div><div class="d wed off">四<b>7</b></div><div class="d wed off">五<b>8</b></div><div class="d wed off">六<b>9</b></div><div class="d wed off">日<b>10</b></div><div class="d wed off">一<b>11</b></div><div class="d wed off">二<b>12</b></div><div class="d wed off">三<b>13</b></div>
+      <div class="d">四<b>14</b></div>
+    </div>
+    <div class="ev">
+      <span style="grid-column:1/3">去香港</span><span style="grid-column:3/4">办证</span><span style="grid-column:4/5">飞美国</span><span style="grid-column:5/11">洛杉矶一带</span><span style="grid-column:11/12">去赌城</span><span style="grid-column:12/16">CES</span><span style="grid-column:16/18">赌城</span><span style="grid-column:18/20">回程</span>
+    </div>
+  </div>
+</div>
+
+<h2>五套方案</h2>
+
+<div class="card" id="mid">
+  <div class="head"><div><span class="tag ok">建议</span><span class="tag">不用多请假</span><h3>折中：便宜，但办证不赶</h3></div><div class="price">£2,939 <small>≈¥25,700</small></div></div>
+  <p>12 月 30 日下班后飞香港，31 日上午办证，当晚飞美国，元旦中午到洛杉矶。</p>
+  <div class="fl"><span class="who her">她</span><div>12-30 国泰 CX381 浦东 → 香港<div class="t">19:05 → 22:05 · 直飞</div></div><span class="p">£246</span></div>
+  <div class="fl"><span class="who him">他</span><div>12-30 阿提哈德 EY62 / EY870 伦敦 → 阿布扎比 → 香港<div class="t">08:40 → 12-31 08:40 · 停 1.5 小时</div></div><span class="p">£476</span></div>
+  <div class="fl"><span class="who both">两人</span><div>12-31 菲航 PR311 / PR122 香港 → 马尼拉 → 洛杉矶<div class="t">22:55 → 1-1 12:10 · 马尼拉停 14 小时</div></div><span class="p">£717 ×2</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-4 Frontier F9 2264 洛杉矶 → 拉斯维加斯<div class="t">17:40 → 18:52 · 不含任何行李</div></div><span class="p">£46 ×2</span></div>
+  <div class="fl"><span class="who him">他</span><div>1-12 捷蓝 B6448 / B67 拉斯维加斯 → 纽约 → 伦敦<div class="t">10:05 → 1-13 09:30</div></div><span class="p">£229</span></div>
+  <div class="fl"><span class="who her">她</span><div>1-12 加航 AC8599 / AC25 拉斯维加斯 → 温哥华 → 浦东<div class="t">07:20 → 1-13 16:00</div></div><span class="p">£462</span></div>
+  <ul><li>好处：比最便宜只多 £95，身份证可以约上午。</li><li>代价：不在香港跨年；马尼拉机场要过夜等 14 小时。</li></ul>
+</div>
+
+<div class="card" id="b">
+  <div class="head"><div><span class="tag">不用多请假</span><h3>B 最便宜</h3></div><div class="price">£2,844 <small>≈¥24,900</small></div></div>
+  <p>和「折中」只差一段：她改成 12 月 31 日当天早上才飞香港。</p>
+  <div class="fl"><span class="who her">她</span><div>12-31 香港航空 HX231 浦东 → 香港<div class="t">07:40 → 10:40 · 直飞</div></div><span class="p">£151</span></div>
+  <p class="sub">其余五段和「折中」完全相同。</p>
+  <ul><li>代价：身份证只能约当天下午，早班机一晚点就赶不上。</li></ul>
+</div>
+
+<div class="card" id="a">
+  <div class="head"><div><span class="tag">不用多请假</span><h3>A 舒服：在香港跨年</h3></div><div class="price">£3,595 <small>≈¥31,500</small></div></div>
+  <p>12 月 31 日办证后在香港过夜，元旦下午出发，首尔只停 4 小时。</p>
+  <div class="fl"><span class="who her">她</span><div>12-30 国泰 CX381 浦东 → 香港<div class="t">19:05 → 22:05</div></div><span class="p">£246</span></div>
+  <div class="fl"><span class="who him">他</span><div>12-30 阿提哈德 EY62 / EY870 伦敦 → 香港<div class="t">08:40 → 12-31 08:40</div></div><span class="p">£476</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-1 Air Premia YP802 / YP103 香港 → 首尔 → 洛杉矶<div class="t">13:40 → 16:20 · 首尔停 4 小时 · 这班价格一小时内在 £859–1,014 之间跳</div></div><span class="p">£1,014 ×2</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-4 美航 AA314 洛杉矶 → 拉斯维加斯<div class="t">21:09 → 22:33 · 含随身行李</div></div><span class="p">£72 ×2</span></div>
+  <div class="fl"><span class="who him">他</span><div>1-12 捷蓝 B6448 / B67 拉斯维加斯 → 伦敦<div class="t">10:05 → 1-13 09:30</div></div><span class="p">£229</span></div>
+  <div class="fl"><span class="who her">她</span><div>1-12 美航 AA2632 / AA127 拉斯维加斯 → 达拉斯 → 浦东<div class="t">05:00 → 1-13 16:50</div></div><span class="p">£472</span></div>
+  <ul><li>好处：办证从容，能在香港跨年，路上少熬一夜。</li><li>代价：比「折中」贵约 £650。</li></ul>
+</div>
+
+<div class="card" id="c">
+  <div class="head"><div><span class="tag">不用多请假</span><h3>C 全直飞</h3></div><div class="price">£4,340 <small>≈¥38,000</small></div></div>
+  <p>长途段全部直飞，最省力，也最贵。</p>
+  <div class="fl"><span class="who her">她</span><div>12-30 国泰 CX381 浦东 → 香港<div class="t">19:05 → 22:05</div></div><span class="p">£246</span></div>
+  <div class="fl"><span class="who him">他</span><div>12-30 国泰 CX256 伦敦 → 香港<div class="t">20:10 → 12-31 16:45 · 直飞</div></div><span class="p">£708</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-1 达美 DL88 香港 → 洛杉矶<div class="t">10:45 → 07:56 · 直飞 13 小时</div></div><span class="p">£1,165 ×2</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-1 达美 DL2653 洛杉矶 → 拉斯维加斯<div class="t">19:12 → 20:25（也可以改到 1-4 再去）</div></div><span class="p">£83 ×2</span></div>
+  <div class="fl"><span class="who him">他</span><div>1-12 英航 BA274 拉斯维加斯 → 伦敦<div class="t">20:55 → 1-13 14:50 · 直飞</div></div><span class="p">£418</span></div>
+  <div class="fl"><span class="who her">她</span><div>1-12 美航 AA2632 / AA127 拉斯维加斯 → 达拉斯 → 浦东<div class="t">05:00 → 1-13 16:50</div></div><span class="p">£472</span></div>
+</div>
+
+<div class="card" id="d">
+  <div class="head"><div><span class="tag warn">要多请 3 天假</span><h3>D 早走：最便宜，假期最长</h3></div><div class="price">£2,760 <small>≈¥24,200</small></div></div>
+  <p>12 月 26 日周六出发，28 日上午办证，29 日直飞洛杉矶，在美国多出三天。</p>
+  <div class="fl"><span class="who her">她</span><div>12-26 香港航空 浦东 → 香港<div class="t">07:40 → 10:40 · 直飞（航班号下单时再核对）</div></div><span class="p">£99</span></div>
+  <div class="fl"><span class="who him">他</span><div>12-26 卡塔尔 QR4 / QR816 伦敦 → 多哈 → 香港<div class="t">14:15 → 12-27 21:40</div></div><span class="p">£632</span></div>
+  <div class="fl"><span class="who both">两人</span><div>12-29 达美 DL88 香港 → 洛杉矶<div class="t">10:45 → 07:50 · 直飞</div></div><span class="p">£592 ×2</span></div>
+  <div class="fl"><span class="who both">两人</span><div>1-4 美航 AA314 洛杉矶 → 拉斯维加斯<div class="t">21:09 → 22:33</div></div><span class="p">£72 ×2</span></div>
+  <div class="fl"><span class="who him">他</span><div>1-12 捷蓝 B6448 / B67 拉斯维加斯 → 伦敦<div class="t">10:05 → 1-13 09:30</div></div><span class="p">£229</span></div>
+  <div class="fl"><span class="who her">她</span><div>1-12 美航 AA2632 / AA127 拉斯维加斯 → 浦东<div class="t">05:00 → 1-13 16:50</div></div><span class="p">£472</span></div>
+  <ul><li>好处：最便宜，跨太平洋直飞，假期 19 天。</li><li>代价：12 月 29–31 日要另外请 3 天假。</li><li>12 月 28 日晚也有华航 CI920 / CI8 经台北的班（20:05 → 19:25，£643），比直飞贵，而且大陆护照能不能在台北转机还没核实。</li></ul>
+</div>
+
+<h2>为什么差这么多：香港飞洛杉矶哪天走</h2>
+<div class="card tw">
+<table>
+<tr><th>出发日</th><th>最低价（单人）</th><th>航班</th></tr>
+<tr><td>12-26 六</td><td class="n">£373</td><td>华航经台北；达美直飞 £385</td></tr>
+<tr><td>12-27 日</td><td class="n">£398</td><td>美联航直飞</td></tr>
+<tr><td>12-28 一</td><td class="n">£592</td><td>达美 DL88 直飞</td></tr>
+<tr><td>12-29 二</td><td class="n">£592</td><td>达美 DL88 直飞</td></tr>
+<tr><td>12-30 三</td><td class="n">£686</td><td>土航经伊斯坦布尔（27 小时）</td></tr>
+<tr><td>12-31 四</td><td class="n">£717</td><td>菲航经马尼拉</td></tr>
+<tr><td>1-1 五</td><td class="n">£859–1,014</td><td>Air Premia 经首尔</td></tr>
+<tr><td>1-2 至 1-5</td><td class="n">£1,039–1,284</td><td>菲航经马尼拉为主</td></tr>
+</table>
+<p class="sub">越靠近 CES 越贵。12 月 26、27 日最便宜，但香港入境处 12 月 25–27 日不办公，那两天走就办不了身份证。</p>
+</div>
+
+<h2>下单前要确认的事</h2>
+<div class="card">
+<ul>
+<li><strong>身份证预约</strong>：12 月 28 日和 31 日之前查过有名额，但还没有实际预约。先约上，再买去香港的票。</li>
+<li><strong>领证</strong>：登记后大约要 5 个工作日才能领，这趟拿不到证，要另去一次香港。</li>
+<li><strong>转机</strong>：马尼拉过夜、温哥华转机（加航回程）、台北转机，用大陆护照是否都可行还没逐项核实。不放心的话回程换美航经达拉斯，贵 £10。</li>
+<li><strong>分开出票</strong>：每段都是单独的票，前一段晚点后一段不管，行李要自己取了再托运。</li>
+<li><strong>行李</strong>：美国境内 £46 的票不含任何行李，带箱子要另加钱。</li>
+</ul>
+</div>
+
+<h2>选哪个</h2>
+<div class="card">
+  <p>点一个，再把下面出现的那句话发回去就行。</p>
+  <div class="pick" id="pick">
+    <button data-v="折中（£2,939，12-30 晚到香港，31 日上午办证）">折中 · £2,939 · 不多请假</button>
+    <button data-v="B 最便宜（£2,844，12-31 早上到香港）">B 最便宜 · £2,844 · 不多请假</button>
+    <button data-v="A 舒服（£3,595，在香港跨年，1-1 出发）">A 舒服 · £3,595 · 不多请假</button>
+    <button data-v="C 全直飞（£4,340）">C 全直飞 · £4,340 · 不多请假</button>
+    <button data-v="D 早走（£2,760，12-26 出发，多请 3 天假）">D 早走 · £2,760 · 多请 3 天假</button>
+  </div>
+  <div id="msg"></div>
+</div>
+
+<details class="card">
+  <summary>订票入口（Google Flights）</summary>
+  <ul>
+    <li>上海 → 香港：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20Shanghai%20to%20HKG%20on%202026-12-26&curr=GBP">12-26</a> · <a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20Shanghai%20to%20HKG%20on%202026-12-30&curr=GBP">12-30</a> · <a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20Shanghai%20to%20HKG%20on%202026-12-31&curr=GBP">12-31</a></li>
+    <li>伦敦 → 香港：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20London%20to%20HKG%20on%202026-12-26&curr=GBP">12-26</a> · <a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20London%20to%20HKG%20on%202026-12-30&curr=GBP">12-30</a></li>
+    <li>香港 → 洛杉矶：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20HKG%20to%20LAX%20on%202026-12-29&curr=GBP">12-29</a> · <a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20HKG%20to%20LAX%20on%202026-12-31&curr=GBP">12-31</a> · <a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20HKG%20to%20LAX%20on%202027-01-01&curr=GBP">1-1</a></li>
+    <li>洛杉矶 → 拉斯维加斯：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20LAX%20to%20LAS%20on%202027-01-04&curr=GBP">1-4</a></li>
+    <li>拉斯维加斯 → 伦敦：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20LAS%20to%20London%20on%202027-01-12&curr=GBP">1-12</a></li>
+    <li>拉斯维加斯 → 上海：<a href="https://www.google.com/travel/flights?q=one%20way%20flights%20from%20LAS%20to%20Shanghai%20on%202027-01-12&curr=GBP">1-12</a></li>
+  </ul>
+</details>
+
+<footer>票价查询时间：2026-11-22 02:30–03:30（UTC）。价格会变，以下单页面为准。</footer>
+</main>
+<script>
+document.querySelectorAll('#pick button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('#pick button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    var m=document.getElementById('msg');
+    m.style.display='block';
+    m.textContent='我选：'+b.getAttribute('data-v');
+  });
+});
+</script>
+</body>
+</html>
