@@ -33,8 +33,8 @@ h1{font:700 32px/1.2 var(--serif);margin:10px 0 12px;letter-spacing:.02em}
 .hero p{color:#cfc8b8;margin:0;max-width:34em}
 .hero p b{color:#fff}
 .route{margin:22px 0 0;width:100%;height:auto;display:block}
-.route text{font:600 11px var(--sans);fill:#eadfc8}
-.route .sm{font-weight:400;fill:#a3acc6;font-size:10px}
+.route text{font:600 19px var(--sans);fill:#eadfc8}
+.route .sm{font-weight:400;fill:#a3acc6;font-size:15px}
 .step{display:flex;align-items:center;gap:10px;margin:40px 0 4px}
 .step i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font:700 14px/28px var(--sans);text-align:center;font-style:normal}
 h2{font:700 21px/1.3 var(--serif);margin:0}
@@ -152,17 +152,17 @@ footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
   <div class="kicker">HONEYMOON · CES 2027</div>
   <h1>去拉斯维加斯的五条路</h1>
   <p>机票和住宿都算进去了。不多请假的话建议选<b>「折中」</b>：提前一晚到香港，12 月 31 日上午办身份证，连休 14 天。下面三步选完，底部会一直显示合计。</p>
-  <svg class="route" viewBox="0 0 720 150" role="img" aria-label="上海和伦敦出发，香港会合，经洛杉矶到拉斯维加斯，再各自回家">
+  <svg class="route" viewBox="0 0 720 190" role="img" aria-label="上海和伦敦出发，香港会合，经洛杉矶到拉斯维加斯，再各自回家">
     <path d="M60 40 Q190 20 250 92" fill="none" stroke="#e58aa6" stroke-width="2" stroke-dasharray="5 5"/>
-    <path d="M60 128 Q170 135 250 92" fill="none" stroke="#7fb0e6" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M60 144 Q170 150 250 92" fill="none" stroke="#7fb0e6" stroke-width="2" stroke-dasharray="5 5"/>
     <path d="M250 92 Q400 -10 550 72" fill="none" stroke="#e0b55c" stroke-width="2.5"/>
     <path d="M550 72 L660 52" fill="none" stroke="#e0b55c" stroke-width="2.5"/>
-    <g fill="#f6efe0"><circle cx="60" cy="40" r="5"/><circle cx="60" cy="128" r="5"/><circle cx="550" cy="72" r="5"/></g>
+    <g fill="#f6efe0"><circle cx="60" cy="40" r="5"/><circle cx="60" cy="144" r="5"/><circle cx="550" cy="72" r="5"/></g>
     <circle cx="250" cy="92" r="8" fill="#e0b55c"/><circle cx="660" cy="52" r="8" fill="#e2664a"/>
-    <text x="72" y="36">上海</text><text x="72" y="50" class="sm">她</text>
-    <text x="72" y="124">伦敦</text><text x="72" y="138" class="sm">他</text>
-    <text x="232" y="116">香港</text><text x="220" y="130" class="sm">会合 · 办证</text>
-    <text x="528" y="96">洛杉矶</text><text x="622" y="34">拉斯维加斯</text><text x="634" y="76" class="sm">CES 1-6~9</text>
+    <text x="74" y="38">上海</text><text x="74" y="58" class="sm">她</text>
+    <text x="74" y="150">伦敦</text><text x="74" y="170" class="sm">他</text>
+    <text x="230" y="124">香港</text><text x="212" y="144" class="sm">会合 · 办证</text>
+    <text x="500" y="104">洛杉矶</text><text x="600" y="30">拉斯维加斯</text><text x="628" y="84" class="sm">CES 1-6~9</text>
   </svg>
 </div></header>
 
@@ -289,9 +289,9 @@ function renderTiers(){var p=byId(cur);
 }
 var DAYS=['12-26','12-27','12-28','12-29','12-30','12-31','1-1','1-2','1-3','1-4','1-5','1-6','1-7','1-8','1-9','1-10','1-11','1-12','1-13','1-14'],WD='六日一二三四五六日一二三四五六日一二三四';
 var CALS={
- std:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去香港'],[6,6,'办证·出发'],[7,10,'洛杉矶'],[11,11,'去赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
- stdA:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去香港'],[6,6,'办证·跨年'],[7,7,'飞美国'],[8,10,'美国'],[11,11,'赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
- early:{t:['wk','wk','comp','extra','extra','extra','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[0,18],ev:[[1,2,'去香港'],[3,3,'办证'],[4,4,'飞美国'],[5,10,'洛杉矶一带'],[11,11,'去赌城'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]}
+ std:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去港'],[6,6,'办证'],[7,10,'洛杉矶'],[11,11,'转场'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
+ stdA:{t:['wk','wk','','','','comp','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[5,18],ev:[[5,5,'去港'],[6,6,'办证'],[7,7,'飞美'],[8,10,'美国'],[11,11,'转场'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]},
+ early:{t:['wk','wk','comp','extra','extra','extra','hol','hol','hol','wed','wed','wed','wed','wed','wed','wed','wed','wed','wed',''],off:[0,18],ev:[[1,2,'去香港'],[3,3,'办证'],[4,4,'飞美'],[5,10,'洛杉矶一带'],[11,11,'转场'],[12,15,'CES'],[16,17,'赌城'],[18,19,'回程']]}
 };
 function cal(k){var c=CALS[k];
   return '<div class="calw"><div class="cal">'+DAYS.map(function(d,i){var on=i>=c.off[0]&&i<=c.off[1];return '<div class="d '+c.t[i]+(on?'':' dim')+'">'+WD[i]+'<b>'+d.split('-')[1]+'</b></div>'}).join('')+'</div><div class="ev">'+c.ev.map(function(e){return '<span style="grid-column:'+e[0]+'/'+(e[1]+1)+'">'+e[2]+'</span>'}).join('')+'</div></div>'+
