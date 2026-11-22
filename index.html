@@ -228,7 +228,7 @@ footer{color:var(--mute);font-size:12px;padding:32px 0 20px;text-align:center}
   <button id="copy">就选这个</button>
 </div></div>
 
-<script src="itin.js?v=1"></script>
+<script src="itin.js?v=2"></script>
 <script>
 var G='https://www.google.com/travel/flights/booking?curr=GBP&hl=zh-CN&tfs=';
 var C=function(a,b,d){return 'https://flights.ctrip.com/online/list/oneway-'+a+'-'+b+'?depdate='+d+'&cabin=y_s&adult=1&child=0&infant=0'};
@@ -354,7 +354,7 @@ function itin(p){if(!IT)return '';var days={},order=[],tips=[];
     (m.tips||[]).forEach(function(t){tips.push([c,t])})});
   var key=function(d){return (d.slice(0,2)=='12'?'0':'1')+d};order.sort(function(x,y){return key(x)<key(y)?-1:1});
   var h='<div class="sec">每天在哪、怎么玩<small>'+order.length+' 天</small></div><div class="daytools"><button data-open="1">全部展开</button><button data-open="0">全部收起</button></div>';
-  h+=order.map(function(d,i){var D=days[d];return '<details class="day"'+(i==0?' open':'')+'><summary><div class="dt"><b>'+(+d.slice(0,2))+'/'+(+d.slice(3))+'</b><span>'+(WDN[d]||'')+'</span></div><div class="hd"><span>'+esc(D.city.join(' → '))+'</span><b>'+esc(D.head.join('；'))+'</b></div><div class="ar">›</div></summary><div class="its">'+
+  h+=order.map(function(d,i){var D=days[d];return '<details class="day"'+(i==0?' open':'')+'><summary><div class="dt"><b>'+(+d.slice(0,2))+'/'+(+d.slice(3))+'</b><span>'+(WDN[d]||'')+'</span></div><div class="hd"><span>'+esc(D.city.filter(function(c){return !D.city.some(function(o){return o!==c&&o.indexOf(c)===0})}).join(' → '))+'</span><b>'+esc(D.head.join('；'))+'</b></div><div class="ar">›</div></summary><div class="its">'+
     D.items.map(function(x){return '<div class="it"><div class="tm">'+esc(x.time)+'</div><h5>'+esc(x.title)+'</h5><p>'+esc(x.detail)+'</p>'+((x.cost||okUrl(x.url))?'<div class="ft">'+(x.cost?'<span>'+esc(x.cost)+'</span>':'')+(okUrl(x.url)?'<a target="_blank" rel="noopener" href="'+esc(x.url)+'">官网 / 预订</a>':'')+'</div>':'')+'</div>'}).join('')+'</div></details>'}).join('');
   if(tips.length){var seen={},g={};tips.forEach(function(t){if(seen[t[1]])return;seen[t[1]]=1;(g[t[0]]=g[t[0]]||[]).push(t[1])});
     h+=Object.keys(g).map(function(c){return '<details class="day"><summary><div class="dt"><b>i</b><span>提醒</span></div><div class="hd"><span>'+esc(c)+'</span><b>实用提醒 '+g[c].length+' 条</b></div><div class="ar">›</div></summary><div class="its"><ul class="tips">'+g[c].map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ul></div></details>'}).join('')}
